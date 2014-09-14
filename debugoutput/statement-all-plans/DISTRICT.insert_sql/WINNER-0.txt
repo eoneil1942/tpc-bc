@@ -1,0 +1,3 @@
+INSERT into "DISTRICT"
+ MATERIALIZE TUPLE from parameters and/or literals
+

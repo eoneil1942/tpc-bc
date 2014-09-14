@@ -1,0 +1,7 @@
+SQL: UPDATE ACCOUNT SET A_ID = ?, A_B_ID = ?, A_ESCROWBALANCE = ?, A_FILLER = ? WHERE (A_B_ID = ?) AND (A_ID = ?);
+COST: 6.0
+PLAN:
+
+UPDATE
+ INDEX SCAN of "ACCOUNT" using "SYS_IDX_A_PK_TREE_10021" (unique-scan covering)
+

@@ -1,0 +1,3 @@
+INSERT into "STOCK"
+ MATERIALIZE TUPLE from parameters and/or literals
+

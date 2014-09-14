@@ -1,0 +1,7 @@
+SQL: DELETE FROM ORDERS WHERE (O_W_ID = ?) AND (O_D_ID = ?) AND (O_ID = ?);
+COST: 6.0
+PLAN:
+
+DELETE
+ INDEX SCAN of "ORDERS" using "SYS_IDX_SYS_PK_10049_10051" (unique-scan covering)
+

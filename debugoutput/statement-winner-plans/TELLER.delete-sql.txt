@@ -1,0 +1,7 @@
+SQL: DELETE FROM TELLER WHERE (T_B_ID = ?) AND (T_ID = ?);
+COST: 4.0
+PLAN:
+
+DELETE
+ INDEX SCAN of "TELLER" using "SYS_IDX_T_PK_HASH_10024" (unique-scan covering)
+

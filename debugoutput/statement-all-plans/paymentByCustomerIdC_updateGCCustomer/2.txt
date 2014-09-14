@@ -1,0 +1,3 @@
+UPDATE
+ INDEX SCAN of "CUSTOMER" using "SYS_IDX_SYS_CT_10030_10032" (range-scan 2/4 cols)
+

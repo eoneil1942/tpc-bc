@@ -1,0 +1,3 @@
+DELETE
+ INDEX SCAN of "CUSTOMER" using "IDX_CUSTOMER" (range-scan 2/3 cols)
+

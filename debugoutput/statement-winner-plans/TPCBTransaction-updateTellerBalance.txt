@@ -1,0 +1,7 @@
+SQL: UPDATE TELLER SET T_ESCROWBALANCE = ? WHERE T_ID = ? AND T_B_ID = ?;
+COST: 4.0
+PLAN:
+
+UPDATE
+ INDEX SCAN of "TELLER" using "SYS_IDX_T_PK_HASH_10024" (unique-scan covering)
+

@@ -1,0 +1,4 @@
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: sum
+  INDEX SCAN of "ORDER_LINE" using "IDX_ORDER_LINE_TREE" (unique-scan covering)
+

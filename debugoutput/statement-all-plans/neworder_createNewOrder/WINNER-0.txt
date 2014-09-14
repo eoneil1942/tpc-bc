@@ -1,0 +1,3 @@
+INSERT into "NEW_ORDER"
+ MATERIALIZE TUPLE from parameters and/or literals
+

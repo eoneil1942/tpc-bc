@@ -1,0 +1,5 @@
+RETURN RESULTS TO STORED PROCEDURE
+ LIMIT 1
+  ORDER BY (SORT)
+   INDEX SCAN of "ORDERS" using "IDX_ORDERS" (unique-scan covering)
+

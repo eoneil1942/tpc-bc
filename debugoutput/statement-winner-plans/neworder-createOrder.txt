@@ -1,0 +1,7 @@
+SQL: INSERT INTO ORDERS (O_ID, O_D_ID, O_W_ID, O_C_ID, O_ENTRY_D, O_CARRIER_ID, O_OL_CNT, O_ALL_LOCAL) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+COST: 0.0
+PLAN:
+
+INSERT into "ORDERS"
+ MATERIALIZE TUPLE from parameters and/or literals
+

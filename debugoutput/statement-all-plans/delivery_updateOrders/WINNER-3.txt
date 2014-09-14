@@ -1,0 +1,3 @@
+UPDATE
+ INDEX SCAN of "ORDERS" using "SYS_IDX_SYS_PK_10049_10051" (unique-scan covering)
+

@@ -1,0 +1,3 @@
+INSERT into "WAREHOUSE"
+ MATERIALIZE TUPLE from parameters and/or literals
+

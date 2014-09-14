@@ -1,0 +1,83 @@
+TPCB and TPCC for VoltDB and CVoltDB, as of 7/23/13
+Note: tpcb was written by Betty, derived from tpcc provided with Voltdb distro
+  CVoltDB tpcc was written by Weiwei, derived from VoltDB tpcc
+
+Benchmark Sources: three versions of procedures:
+--with CVoltdb annotations, escrow cols (under src)
+--with CVoltdb annotations but no escrow cols (under src-cv-nonescrow)
+--without CVoltdb annotations (under src-v)
+
+To run with CVoltdb server, escrow columns in DB:
+Use the src directories as is, but copy to ../tpc-bc-e
+
+To run with CVoltdb server, no escrow columns in DB:
+Copy everything to ../tpc-bc-ne
+Replace src/com/*procedures with src-cv-nonescrow/com/*procedures
+
+To run with VoltDB:
+Copy everything to ../tpc-bc-v
+Replace src/com/*procedures with src-v/com/*procedures
+If using Voltdb 3.0+, change src/com/MyTPCCLoader.java's import of org.voltdb.Pair
+   to import of org.voltcore.Pair
+
+To run with a Voltdb or CVoltdb server in dir at ../spot
+
+To run server: single host
+Single Host: uses deployment.xml
+bash run_tpc[bc]1.sh spot catalog-v      for Voltdb server
+or
+bash run_tpc[bc]1.sh spot catalog-cv   for CVoltdb server
+bash run_tpc[bc]1.sh spot server > /mnt/ramdisk/server.log   (either server)
+(or use runservers1.sh, which uses /mnt/ramdisk for output)
+
+Multihost: uses mhx_deployment.xml x= 2, 3, or 4
+--Check host ids in run_tpc[bc]x.sh
+bash run_tpc[bc]x.sh spot catalog-v      for Voltdb server, or CVoltdb server on no-escrow-cols DB
+or
+bash run_tpc[bc]x.sh spot catalog-cv     for CVoltdb server, using escrow cols in DB
+bash run_tpc[bc]x.sh spot server > /mnt/ramdisk/server.log   (either server)
+
+The running of servers on multiple hosts is automated by the runserversx.sh series
+They output to /mnt/ramdisk, the ramdisk created at bootup by fstab entry
+bash runserversx.sh tpc[bc] spot catalog-cv    for CVoltdb server, using escrow cols in DB, K=0
+  so for example for escrow tpcb using CVoltdb in apr6 on 4 hosts, K=0:
+  logon to cv2, the assumed controlling host
+  cd tpc-bc-e  (copy of tpc-bc available on all 4 hosts)
+  bash runservers4.sh tpcb apr6 catalog-cv    will run server on 4 hosts
+  Note: don't use " > output-file" with runserversx.sh
+  for asserts: bash runservers4.sh tpcb apr6 catalog-cv -ea
+  
+bash runserversx.sh tpc[bc] spot catalog-v    for CVoltdb server, using no escrow cols in DB, K=0
+                                              or Voltdb server
+For K=1 replication,
+bash runserversxk1.sh tpc[bc] spot catalog-cv|catalog-v [-ea]
+
+Running clients: TPCB needs MP% argument, but TPCC does not
+
+To run TPCB client with 15% MP:
+Single host
+bash run_tpcb1.sh spot client 15 > client.log    (space needed between 5 and >)
+or, for enabled asserts
+bash run_tpcb1.sh spot client-ea 15 > client.log 
+
+Multiple (2 here) server hosts, client on one host:
+bash run_tpcb2.sh spot client 15 > client.log   (space needed between 5 and >)
+With replication:
+bash run_tpcb2k1.sh spot client 15 > ...
+
+TPC-C: run_tpcc1.sh for single host, like run_tpcb1.sh
+--but no MP_PERCENT arg as yet
+With replication:
+bash run_tpcc2k1.sh spot client > ...
+
+Sources
+src/com: top dir: benchmark drivers for all cases, 
+         subdirs: procedures and tpcbprocedures with CVoltdb annotations/escrow
+src-v: procedures and tpcbprocedures without CVoltdb annotations/escrow
+src-cv-nonescrow: procedures and tpcbprocedures with CVoltdb annotations but no escrow ops
+orig: original tpcc from voltdb distro
+
+Other useful files:
+send-dir.sh, update-dirs.sh: send a dir from cv2 to all other hosts
+ckvolt.sh: check for server running on various cvx hosts
+

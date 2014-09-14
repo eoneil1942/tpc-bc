@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="snippet/" kind="src" path="src"/>
+	<classpathentry kind="lib" path="tpcb.jar"/>
+	<classpathentry kind="lib" path="tpcc.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/oct14/obj/release/dist/voltdb/voltdb-2.1.3.jar"/>
+	<classpathentry kind="lib" path="/oct14/obj/release/dist/voltdb/voltdbclient-2.1.3.jar"/>
+	<classpathentry kind="output" path="obj"/>
+</classpath>

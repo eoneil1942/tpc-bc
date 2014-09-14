@@ -1,0 +1,6 @@
+RETURN RESULTS TO STORED PROCEDURE
+ AGGREGATION ops: count
+  NESTLOOP INDEX JOIN
+  inline (INDEX SCAN of "ORDER_LINE" using "IDX_ORDER_LINE_TREE" (range-scan covering))
+   INDEX SCAN of "STOCK" using "SYS_IDX_SYS_PK_10043_10044" (range-scan 1/2 cols)
+

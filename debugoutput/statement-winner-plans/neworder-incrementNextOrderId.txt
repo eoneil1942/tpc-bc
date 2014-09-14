@@ -1,0 +1,7 @@
+SQL: UPDATE DISTRICT SET D_NEXT_O_ID = ? WHERE D_ID = ? AND D_W_ID = ?;
+COST: 6.0
+PLAN:
+
+UPDATE
+ INDEX SCAN of "DISTRICT" using "SYS_IDX_SYS_PK_10021_10022" (unique-scan covering)
+

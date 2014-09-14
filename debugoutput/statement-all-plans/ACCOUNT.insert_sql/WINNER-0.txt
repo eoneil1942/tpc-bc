@@ -1,0 +1,3 @@
+INSERT into "ACCOUNT"
+ MATERIALIZE TUPLE from parameters and/or literals
+

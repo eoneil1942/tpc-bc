@@ -1,0 +1,3 @@
+UPDATE
+ INDEX SCAN of "WAREHOUSE" using "SYS_IDX_W_PK_TREE_10018" (unique-scan covering)
+

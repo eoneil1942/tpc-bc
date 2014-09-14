@@ -1,0 +1,7 @@
+SQL: INSERT INTO BRANCH VALUES (?, ?, ?);
+COST: 0.0
+PLAN:
+
+INSERT into "BRANCH"
+ MATERIALIZE TUPLE from parameters and/or literals
+

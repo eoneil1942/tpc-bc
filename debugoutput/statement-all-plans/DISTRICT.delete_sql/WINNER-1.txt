@@ -1,0 +1,3 @@
+DELETE
+ INDEX SCAN of "DISTRICT" using "SYS_IDX_SYS_PK_10021_10022" (unique-scan covering)
+

@@ -1,0 +1,3 @@
+INSERT into "HISTORY"
+ MATERIALIZE TUPLE from parameters and/or literals
+

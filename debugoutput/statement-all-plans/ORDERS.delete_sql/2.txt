@@ -1,0 +1,3 @@
+DELETE
+ INDEX SCAN of "ORDERS" using "SYS_IDX_SYS_CT_10050_10052" (range-scan 2/4 cols)
+

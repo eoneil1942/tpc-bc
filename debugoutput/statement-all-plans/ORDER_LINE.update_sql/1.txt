@@ -1,0 +1,3 @@
+UPDATE
+ INDEX SCAN of "ORDER_LINE" using "IDX_ORDER_LINE_TREE" (unique-scan covering)
+

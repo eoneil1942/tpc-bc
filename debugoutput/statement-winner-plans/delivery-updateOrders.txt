@@ -1,0 +1,7 @@
+SQL: UPDATE ORDERS SET O_CARRIER_ID = ? WHERE O_ID = ? AND O_D_ID = ? AND O_W_ID = ?;
+COST: 6.0
+PLAN:
+
+UPDATE
+ INDEX SCAN of "ORDERS" using "SYS_IDX_SYS_PK_10049_10051" (unique-scan covering)
+

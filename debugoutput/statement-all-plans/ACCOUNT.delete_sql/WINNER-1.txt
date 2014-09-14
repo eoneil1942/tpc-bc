@@ -1,0 +1,3 @@
+DELETE
+ INDEX SCAN of "ACCOUNT" using "SYS_IDX_A_PK_TREE_10021" (unique-scan covering)
+

@@ -1,0 +1,7 @@
+SQL: UPDATE STOCK SET S_I_ID = ?, S_W_ID = ?, S_ESCROWQUANTITY = ?, S_DIST_01 = ?, S_DIST_02 = ?, S_DIST_03 = ?, S_DIST_04 = ?, S_DIST_05 = ?, S_DIST_06 = ?, S_DIST_07 = ?, S_DIST_08 = ?, S_DIST_09 = ?, S_DIST_10 = ?, S_ESCROWYTD = ?, S_ESCROWORDER_CNT = ?, S_ESCROWREMOTE_CNT = ?, S_DATA = ? WHERE (S_W_ID = ?) AND (S_I_ID = ?);
+COST: 6.0
+PLAN:
+
+UPDATE
+ INDEX SCAN of "STOCK" using "SYS_IDX_SYS_PK_10043_10044" (unique-scan covering)
+

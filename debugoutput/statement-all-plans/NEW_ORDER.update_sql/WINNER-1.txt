@@ -1,0 +1,3 @@
+UPDATE
+ INDEX SCAN of "NEW_ORDER" using "SYS_IDX_NO_PK_TREE_10056" (unique-scan covering)
+

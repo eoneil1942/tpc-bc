@@ -1,0 +1,7 @@
+SQL: INSERT INTO ORDER_LINE VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+COST: 0.0
+PLAN:
+
+INSERT into "ORDER_LINE"
+ MATERIALIZE TUPLE from parameters and/or literals
+
